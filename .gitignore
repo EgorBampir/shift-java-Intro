@@ -1,0 +1,21 @@
+# Default ignored files
+/.idea/shelf/
+/workspace.xml
+# Скомпилированные классы
+*.class
+
+# Файлы IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# Папка сборки
+target/
+build/
+
+# Логи приложения
+*.log
+
+# Системные файлы
+.DS_Store
+Thumbs.db
