@@ -23,7 +23,7 @@ public class Main {
         megatron.transform();
         megatron.showProperties();
 
-        // Список трансформеров (полиморфизм)
+
         List<Transformer> transformers = new ArrayList<>();
         transformers.add(optimus);
         transformers.add(megatron);
