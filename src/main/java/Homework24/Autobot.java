@@ -1,24 +1,23 @@
 package Homework24;
-public class Autobot extends Transformer {
-    private String teamName;
-    private final String eyeColor = "Blue";
-    private boolean kindness = true;
+
+public class Autobot extends Transformer implements Action {
 
     public Autobot(String name, String teamName) {
-        super(name);
-        this.teamName = teamName;
+        super(name, teamName, "Blue", true);
     }
 
+    @Override
     public void transform() {
         System.out.println(name + " transforms into a vehicle");
     }
 
-    public void showProperties() {
-        System.out.println(
-                "Name: " + name +
-                        ", Team: " + teamName +
-                        ", EyeColor: " + eyeColor +
-                        ", Kindness: " + kindness
-        );
+    @Override
+    public void fire() {
+        System.out.println(name + " is firing");
+    }
+
+    @Override
+    public void charge() {
+        System.out.println(name + " is charging");
     }
 }
