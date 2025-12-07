@@ -1,16 +1,9 @@
 package Homework24;
 
-public class Autobot extends Transformer {
-
-    private String teamName;
-
-    private static final String EYE_COLOR = "Blue";
-
-    private boolean kindness = true;
+public class Autobot extends Transformer implements Action {
 
     public Autobot(String name, String teamName) {
-        super(name);
-        this.teamName = teamName;
+        super(name, teamName, "Blue", true);
     }
 
     public enum Form {
@@ -19,6 +12,7 @@ public class Autobot extends Transformer {
         JET
     }
 
+    @Override
     public void transform(Form form) {
         switch (form) {
             case ROBOT ->
@@ -30,12 +24,29 @@ public class Autobot extends Transformer {
         }
     }
 
+    @Override
+    public void transform() {
+        System.out.println(name + " transforms into a vehicle");
+    }
+
+    @Override
+    public void fire() {
+        System.out.println(name + " is firing");
+    }
+
+    @Override
+    public void charge() {
+        System.out.println(name + " is charging");
+    }
+
+    @Override
     public void showProperties() {
         System.out.println(
                 "Name: " + name +
                         ", Team: " + teamName +
-                        ", EyeColor: " + EYE_COLOR +
+                        ", EyeColor: " + eyeColor +
                         ", Kindness: " + kindness
         );
     }
 }
+

@@ -1,17 +1,9 @@
 package Homework24;
 
-public class Decepticon extends Transformer {
-
-    private String teamName;
-
-    // Для десептиконов другой цвет глаз
-    private static final String EYE_COLOR = "Red";
-
-    private boolean aggression = true;
+public class Decepticon extends Transformer implements Action {
 
     public Decepticon(String name, String teamName) {
-        super(name);
-        this.teamName = teamName;
+        super(name, teamName, "Red", false);
     }
 
     public enum Form {
@@ -31,12 +23,29 @@ public class Decepticon extends Transformer {
         }
     }
 
+    @Override
+    public void transform() {
+        System.out.println(name + " transforms into ground/air transport, weapon or machinery");
+    }
+
+    @Override
+    public void fire() {
+        System.out.println(name + " is firing");
+    }
+
+    @Override
+    public void charge() {
+        System.out.println(name + " is charging");
+    }
+
+    @Override
     public void showProperties() {
         System.out.println(
                 "Name: " + name +
                         ", Team: " + teamName +
-                        ", EyeColor: " + EYE_COLOR +
+                        ", EyeColor: " + eyeColor +
                         ", Aggression: " + aggression
         );
     }
 }
+
