@@ -13,16 +13,15 @@ public class Main {
         ((Action) optimus).run();
         ((Action) optimus).fire();
         ((Action) optimus).charge();
-        optimus.transform();
+        ((Autobot) optimus).transform(Autobot.Form.ROBOT);
         optimus.showProperties();
 
         System.out.println("\n=== DECEPTICON ACTIONS ===");
         ((Action) megatron).run();
         ((Action) megatron).fire();
         ((Action) megatron).charge();
-        megatron.transform();
+        ((Decepticon) megatron).transform(Decepticon.Form.JET);
         megatron.showProperties();
-
 
         List<Transformer> transformers = new ArrayList<>();
         transformers.add(optimus);
@@ -34,3 +33,4 @@ public class Main {
         }
     }
 }
+

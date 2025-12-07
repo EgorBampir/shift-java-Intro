@@ -6,6 +6,23 @@ public class Decepticon extends Transformer implements Action {
         super(name, teamName, "Red", false);
     }
 
+    public enum Form {
+        ROBOT,
+        VEHICLE,
+        JET
+    }
+
+    public void transform(Form form) {
+        switch (form) {
+            case ROBOT ->
+                    System.out.println(name + " transforms into ROBOT mode");
+            case VEHICLE ->
+                    System.out.println(name + " transforms into VEHICLE mode");
+            case JET ->
+                    System.out.println(name + " transforms into JET mode");
+        }
+    }
+
     @Override
     public void transform() {
         System.out.println(name + " transforms into ground/air transport, weapon or machinery");
@@ -20,4 +37,15 @@ public class Decepticon extends Transformer implements Action {
     public void charge() {
         System.out.println(name + " is charging");
     }
+
+    @Override
+    public void showProperties() {
+        System.out.println(
+                "Name: " + name +
+                        ", Team: " + teamName +
+                        ", EyeColor: " + eyeColor +
+                        ", Aggression: " + aggression
+        );
+    }
 }
+
