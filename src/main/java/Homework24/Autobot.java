@@ -1,7 +1,11 @@
 package Homework24;
+
 public class Autobot extends Transformer {
+
     private String teamName;
-    private final String eyeColor = "Blue";
+
+    private static final String EYE_COLOR = "Blue";
+
     private boolean kindness = true;
 
     public Autobot(String name, String teamName) {
@@ -9,15 +13,28 @@ public class Autobot extends Transformer {
         this.teamName = teamName;
     }
 
-    public void transform() {
-        System.out.println(name + " transforms into a vehicle");
+    public enum Form {
+        ROBOT,
+        VEHICLE,
+        JET
+    }
+
+    public void transform(Form form) {
+        switch (form) {
+            case ROBOT ->
+                    System.out.println(name + " transforms into ROBOT mode");
+            case VEHICLE ->
+                    System.out.println(name + " transforms into VEHICLE mode");
+            case JET ->
+                    System.out.println(name + " transforms into JET mode");
+        }
     }
 
     public void showProperties() {
         System.out.println(
                 "Name: " + name +
                         ", Team: " + teamName +
-                        ", EyeColor: " + eyeColor +
+                        ", EyeColor: " + EYE_COLOR +
                         ", Kindness: " + kindness
         );
     }
